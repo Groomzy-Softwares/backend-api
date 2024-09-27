@@ -1,0 +1,13 @@
+# TO DO UPDATE SUBSCRIPTION TYPES
+
+type Subscription {
+  bookingMade(providerId: Int!): bookingMadeSubscription!
+
+  bookingPaid(bookingId: Int!): bookingPaidSubscription!
+
+  bookingCancelled(bookingId: Int!): bookingCancelledSubscription!
+
+  bookingRateService(bookingId: Int!): bookingRateServiceSubscription!
+
+  bookingDone(bookingId: Int!): bookingDoneSubscription!
+}

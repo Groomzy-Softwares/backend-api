@@ -1,0 +1,21 @@
+node_modules/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VSCode related
+.vscode/
+
+
+# Secret
+.env
+
+# now
+.now
+
+# fs
+.DS_Store
+.vercel

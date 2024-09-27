@@ -1,0 +1,8 @@
+{
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "rules": {
+    "no-async-without-await": true,
+    "object-literal-sort-keys": true,
+    "no-console": [true, "log", "error"]
+  }
+}

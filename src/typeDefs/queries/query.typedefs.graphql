@@ -1,0 +1,14 @@
+# TO DO ADD MORE QUERY TYPES
+
+type Query {
+  clients: [Client!]!
+  clientBookings(clientId: Int!): Client!
+  providers(search: String, category: String): [Provider!]!
+  providerRatings(providerId: Int!): Provider!
+  providerBookings(providerId: Int!): Provider!
+  providerServices(providerId: Int!): Provider!
+  providerStaffs(providerId: Int!): Provider!
+  providerOperatingTimes(providerId: Int!): Provider!
+  services: [Service!]!
+  staffs: [Staff!]!
+}

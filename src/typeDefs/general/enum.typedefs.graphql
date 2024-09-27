@@ -1,0 +1,29 @@
+# ***************** Enums ***************** #
+
+# Booking status enum
+enum BookingStatus {
+  Active
+  Cancelled
+  Deleted
+  Done
+  Pending
+}
+
+# Business day enum
+enum BusinessDay {
+  Fri
+  Mon
+  Sat
+  Sun
+  Thu
+  Tue
+  Wed
+}
+
+# User status enum
+enum UserStatus {
+  Active
+  Inactive
+  Pending
+  Suspended
+}

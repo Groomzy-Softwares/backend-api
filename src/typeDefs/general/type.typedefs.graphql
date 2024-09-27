@@ -1,0 +1,192 @@
+# ***************** Query return types ***************** #
+
+# Address type
+type Address {
+  # Address identifier
+  id: Int!
+  # Address
+  address: String
+  # Location latitude
+  latitude: Float
+  # Location longitude
+  longitude: Float
+}
+
+# Category type
+type Category {
+  id: Int!
+  category: String!
+}
+
+# Day tye
+type Day {
+  # Day Identifier
+  id: Int!
+  # Day
+  day: BusinessDay
+}
+
+# Time type
+type Time {
+  # Time identifier
+  id: Int!
+  # Day start time
+  startTime: String!
+  # Day rnd time
+  endTime: String!
+}
+
+# DayTime type
+type DayTime {
+  # Day time identifier
+  id: Int!
+  # Day
+  day: Day!
+  # Day time
+  time: Time!
+  # Provider for the day time
+  provider: Provider!
+}
+
+# Rating type
+type Rating {
+  # Rating identifier
+  id: Int!
+  # Rating
+  rate: Float!
+  # Rating comment
+  comment: String
+}
+
+# TransportCost type
+type TransportCost {
+  # Transport cost identifier
+  id: Int!
+  # Transport distance to be travelled
+  distance: Float!
+  # Transport estimated cost
+  estimatedCost: Float!
+}
+
+# Client type
+type Client {
+  # Client identifier
+  id: Int!
+  # Client email
+  email: String!
+  # Client full name
+  fullName: String!
+  # Client phone number
+  phoneNumber: String
+  # Client address
+  addresses: Address
+  # Client token
+  token: String
+  # Client role
+  role: String!
+  # Client bookings
+  bookings: [Booking!]
+}
+
+# Provider type
+type Provider {
+  # Provider identifier
+  id: Int!
+  # Provider email
+  email: String!
+  # Provider full name
+  fullName: String!
+  # Provider phone number
+  phoneNumber: String
+  # Provider address
+  address: Address
+  # Provider bookings
+  bookings: [Booking!]
+  # Provider staffs
+  staffs: [Staff!]
+  # Provider operating day times
+  dayTimes: [DayTime!]
+  # Provider token
+  token: String
+  # Provider role
+  role: String!
+  # Provider service category
+  serviceProviderCategories: [ServiceProviderCategory!]
+}
+
+# Service type
+type Service {
+  # Service identifier
+  id: Int!
+  # Service description
+  description: String!
+  # Service duration
+  duration: Float!
+  # Service duration unit
+  durationUnit: String!
+  # Service call type
+  inHouse: Boolean!
+  # Service price
+  price: Float!
+  # Service price
+  title: String!
+  # Service staff
+  staff: Staff
+  # Service category
+  serviceProviderCategories: [ServiceProviderCategory!]
+}
+
+# Service Provider Category type
+type ServiceProviderCategory {
+  # A service
+  service: Service
+  # A provider who provivdes the service
+  provider: Provider
+  # Service category
+  category: Category
+}
+
+# Staff type
+type Staff {
+  # Staff identifier
+  id: Int!
+  # Staff full name
+  fullName: String!
+  # Staff boongs
+  bookings: [Booking!]
+  # Staff services
+  services: [Service!]
+  # Staff provider
+  provider: Provider!
+}
+
+# Booking type
+type Booking {
+  # Booking identifier
+  id: Int!
+  # Booking time
+  bookingTime: String!
+  # Booking type
+  inHouse: Boolean!
+  # Booking created time
+  createdAt: String!
+  # Booking status
+  status: BookingStatus!
+  # Booking client
+  client: Client!
+  # Booking rating
+  rating: Rating
+  # Booking provider
+  provider: Provider!
+  # Booking staff
+  staff: Staff!
+  # Service
+  service: Service!
+  # Booking transport cost
+  transportCost: TransportCost
+}
+
+type Message {
+  # Message
+  message: String!
+}

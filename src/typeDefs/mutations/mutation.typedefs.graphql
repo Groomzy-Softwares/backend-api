@@ -1,0 +1,88 @@
+# TO DO ADD MORE MUTATION TYPES
+
+type Mutation {
+  # ********** Client signup ********** #
+  signupClient(
+    email: String!
+    fullName: String!
+    password: String!
+    phoneNumber: String!
+  ): Message!
+
+  # ********** Client signin ********** #
+  signinClient(email: String!, password: String!, verify: String): Client!
+
+  # ********** Provider signup ********** #
+  signupProvider(
+    email: String!
+    fullName: String!
+    password: String!
+    phoneNumber: String!
+  ): Message!
+
+  # ********** Provider signin ********** #
+  signinProvider(email: String!, password: String!, verify: String): Provider!
+
+  # ********** Add service ********** #
+  addService(
+    category: String!
+    title: String!
+    description: String!
+    duration: Float!
+    durationUnit: String!
+    price: Float!
+    inHouse: Boolean!
+  ): Message!
+
+  # ********** Delete service ********** #
+  deleteService(serviceId: Int!, category: String!): Message!
+
+  # ********** Edit service ********** #
+  editService(
+    serviceId: Int!
+    category: String
+    title: String
+    description: String
+    duration: Float
+    durationUnit: String
+    price: Float
+    inHouse: Boolean
+  ): Message!
+
+  # ********** Add staff ********** #
+  addStaff(fullName: String!): Message!
+
+  # ********** Delete staff ********** #
+  deleteStaff(staffId: Int!): Message!
+
+  # ********** Edit staff ********** #
+  editStaff(staffId: Int!, fullName: String): Message!
+
+  # ********** Add operating time ********** #
+  addOperatingTime(day: String!, startTime: String!, endTime: String!): Message!
+
+  # ********** Edit operating time ********** #
+  editOperatingTime(
+    dayTimeId: Int!
+    day: String!
+    startTime: String
+    endTime: String
+  ): Message!
+
+  # ********** Delete operating time ********** #
+  deleteOperatingTime(dayTimeId: Int!): Message!
+
+  # ********** Client book ********** #
+  clientBook(
+    providerId: Int!
+    serviceId: Int!
+    staffId: Int!
+    bookingDate: String!
+    bookingTime: String!
+    inHouse: Boolean!
+    address: String
+  ): Booking!
+
+  # ********** Client book complete ********** #
+  clientBookComplete(bookingId: Int!, complete: Boolean!): Message!
+}
